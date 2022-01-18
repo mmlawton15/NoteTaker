@@ -1,15 +1,8 @@
-const express = require('express');
-const app = express();
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-
-//Make the server listen
-app.listen(3001, () => {
-  console.log(`API server now on port 3001!`);
-});
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');

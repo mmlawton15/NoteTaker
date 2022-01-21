@@ -14,6 +14,7 @@
 
 //when this is deployed all of this will go into the root
 //all server code goes in here for starting the project and starting the public folder
+//THIS IS THE MAIN FILE FOR APPLICATIONS BACKEND SERVER. RUNS WHEN I START SERVER
    
 
 const express = require('express');

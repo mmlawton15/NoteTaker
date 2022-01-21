@@ -1,3 +1,4 @@
+//MAIN FILE FOR FRONTEND CODE. LINKED TO FROM THE HTML FILES IT NEEDS TO RUN ON
 let noteTitle;
 let noteText;
 let saveNoteBtn;

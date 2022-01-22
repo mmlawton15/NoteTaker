@@ -1,13 +1,8 @@
-
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
-
-const express = require('express');
-const app = express();
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
@@ -16,14 +11,6 @@ if (window.location.pathname === '/notes') {
   newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
-
-//Make the get started button take you to the notes page
-// app.get('/', function(req, res){
-//   res.render('notes.html');
-// });
-
-app.use(express.static(__dirname + 'assets/js'));
-
 
 // Show an element
 const show = (elem) => {

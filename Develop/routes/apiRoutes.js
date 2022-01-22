@@ -10,8 +10,9 @@ let parsedNotes = JSON.parse(preloadedNotes);
 // reac into the db.json file
 // grabe the notes and return the json
 router.get('/notes', (req, res) => {
-    console.log(parsedNotes);
-    res.json([{title: 'taco', text: 'tuesday'}])// placeholder
+    console.log(parsedNotes); //returning db.json notes
+    res.json([{title: 'Test Title', text: 'Test Text'}])// placeholder
+    res.json([{parsedNotes(title)}]) //what i am working with
 });
 
 router.post('/notes', (req, res) => { 

@@ -1,10 +1,10 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"Grocery List",
+        "text":"Bananas, Apples, Cookies, Ramen"
     },
     {
-        "title":"Test two",
-        "text":"Test text two"
+        "title":"Books to Read",
+        "text":"Count of Monte Christo, Dracula, 20,000 Leagues Under the Sea, The Odyssey"
     }
 ]

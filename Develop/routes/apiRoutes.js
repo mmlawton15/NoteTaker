@@ -10,8 +10,9 @@ router.get('/notes', (req, res) => {
     let parsedNotes = JSON.parse(preloadedNotes);
     //returning db.json notes
     console.log(parsedNotes); 
-    //push these into an empty array global variable
-    notesArray.push(parsedNotes);
+    //push these into an empty array global variable after converting them to a json string
+    var JSONparsedNotes = JSON.stringify(parsedNotes);
+    notesArray.push(JSONparsedNotes);
     //return the item
     res.json(parsedNotes) 
 });
@@ -25,6 +26,7 @@ router.post('/notes', (req, res) => {
     var JSONReqBody = JSON.stringify(req.body);
     //need it to push the new note into notesArray, then return that new array with the pre-existing notes and the new note into the db.json file
     notesArray.push(JSONReqBody);
+    console.log("THIS IS WHAT NOTES ARRAY SHOWS" + notesArray); //sanity check, the new note is still not inside the db.json array
         //then write to file
         fs.writeFile('./db/db.json', JSONReqBody, function(err) { 
             if (err) { //if there is an error 

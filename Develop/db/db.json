@@ -1,6 +1,14 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"Grocery List",
+        "text":"Bananas, Apples, Cookies, Ramen"
+    },
+    {
+        "title":"Books to Read",
+        "text":"Count of Monte Christo, Dracula, 20,000 Leagues Under the Sea, The Odyssey"
+    },
+    {
+        "title":"Favorite Colors",
+        "text":"Cerulean, Fuschia, Chartreuse, Voilet"
     }
 ]

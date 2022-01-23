@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const fs = require("fs");
-var notesArray = []
+var db = fs.readFileSync('./db/db.json'); //this is currently a json string
 
 //FUNCTION TO GET PRE-EXISTING NOTES AND SHOW ON HTML
 router.get('/notes', (req, res) => {
@@ -10,9 +10,6 @@ router.get('/notes', (req, res) => {
     let parsedNotes = JSON.parse(preloadedNotes);
     //returning db.json notes
     console.log(parsedNotes); 
-    //push these into an empty array global variable after converting them to a json string
-    var JSONparsedNotes = JSON.stringify(parsedNotes);
-    notesArray.push(JSONparsedNotes);
     //return the item
     res.json(parsedNotes) 
 });
@@ -22,20 +19,17 @@ router.get('/notes', (req, res) => {
 router.post('/notes', (req, res) => { 
     //reading the current request body in terminal
     console.log(req.body); 
-    //convert JS object into JSON String
-    var JSONReqBody = JSON.stringify(req.body);
-    //need it to push the new note into notesArray, then return that new array with the pre-existing notes and the new note into the db.json file
-    notesArray.push(JSONReqBody);
-    console.log("THIS IS WHAT NOTES ARRAY SHOWS" + notesArray); //sanity check, the new note is still not inside the db.json array
-        //then write to file
-        fs.writeFile('./db/db.json', JSONReqBody, function(err) { 
+    //JSON parse db.json. Take string and making it array again
+    var JSONDB = JSON.parse(db)
+    JSONDB.push(req.body); //push into array
+    console.log(JSONDB);
+    //then write to file
+        fs.writeFile('./db/db.json', JSON.stringify(JSONDB), function(err) {  //turn array into a string
             if (err) { //if there is an error 
                 console.log("Error: " + err); //console log this error
                 return;
             }
         })
-
-    //after the new note is in db.json, make it display on html
 
     //this will end resonse without providing data, placeholder for now
     res.end() 

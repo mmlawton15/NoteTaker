@@ -177,7 +177,7 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView); //add a new note here
-  noteTitle.addEventListener('keyup', handleRenderSaveBtn);
+  noteTitle.addEventListener('keyup', handleRenderSaveBtn); //this one will show the new note
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 

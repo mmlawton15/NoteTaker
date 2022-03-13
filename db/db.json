@@ -1,0 +1,32 @@
+[
+    {
+        "title": "Grocery List",
+        "text": "Bananas, Apples, Cookies, Ramen",
+        "id": 215615
+    },
+    {
+        "title": "Books to Read",
+        "text": "Count of Monte Christo, Dracula, 20,000 Leagues Under the Sea, The Odyssey",
+        "id": 1891891
+    },
+    {
+        "title": "Favorite Colors",
+        "text": "Cerulean, Fuschia, Chartreuse, Voilet",
+        "id": 189189
+    },
+    {
+        "title": "Farmers Market List",
+        "text": "honey, ginger, socks",
+        "id": 15615618
+    },
+    {
+        "title": "Animals I Love",
+        "text": "Giraffe, Koala, Westie, Flamingo",
+        "id": 77481898
+    },
+    {
+        "title": "Things that Make Me Happy",
+        "text": "Disco balls, plants, puzzles, Animal Crossing",
+        "id": 17687
+    }
+]

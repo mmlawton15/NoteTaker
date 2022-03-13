@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const fs = require("fs");
-const uuid = require("uuid"); // library to gen a unique id
-var db = fs.readFileSync('./db/db.json'); //this is currently a json string
+const uuid = require("uuid");
+var db = fs.readFileSync('./db/db.json');
 
 //FUNCTION TO GET PRE-EXISTING NOTES AND SHOW ON HTML
 router.get('/notes', (req, res) => {
@@ -9,8 +9,6 @@ router.get('/notes', (req, res) => {
     let preloadedNotes = fs.readFileSync('./db/db.json');
     //parse the notes to be json
     let parsedNotes = JSON.parse(preloadedNotes);
-    //returning db.json notes
-    console.log(parsedNotes); 
     //return the item
     res.json(parsedNotes) 
 });
@@ -18,8 +16,6 @@ router.get('/notes', (req, res) => {
 
 //FUNCTION TO CHANGE THE DB.JSON FILE AND PUT THE CHANGED RESULT ON HTML
 router.post('/notes', (req, res) => { 
-    //reading the current request body in terminal
-    console.log(req.body); 
     //JSON parse db.json. Take string and making it array again
     var JSONDB = JSON.parse(db)
     // add an id to the body obj
@@ -27,7 +23,6 @@ router.post('/notes', (req, res) => {
     req.body.id = uniqueId // push it onto the body obj w/ the key of id
     //console.log(req.body.id); sanity check
     JSONDB.push(req.body); //push into array
-    console.log(JSONDB);
     //then write to file
         fs.writeFile('./db/db.json', JSON.stringify(JSONDB), function(err) {  //turn array into a string
             if (err) { //if there is an error 
@@ -35,7 +30,6 @@ router.post('/notes', (req, res) => {
                 return;
             }
         })
-
     //this will end resonse without providing data, placeholder for now
     res.end() 
 });

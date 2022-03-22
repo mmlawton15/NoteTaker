@@ -26,4 +26,19 @@ router.post('/notes', (req, res) => {
     res.end() 
 });
 
+//FUNCTION TO DELETE A NOTE
+router.delete('/notes', (req, res) => {
+    var JSONDB = JSON.parse(db)
+    let uniqueId = uuid.v4();
+    req.body.id = uniqueId;
+    JSONDB.delete(req.body);
+        fs.writeFile('./db/db.json', JSON.stringify(JSONDB), function(err) {
+            if (err) {
+                console.log("Error: " + err);
+                return;
+            }
+        })
+    res.end() 
+})
+
 module.exports = router;

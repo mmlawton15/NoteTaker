@@ -4,6 +4,16 @@ This was challenge 11 of our coding bootcamp. It's a similar project to our task
 ## How did I build this?
 This was our first full-stack project, where we used everything we have learned to build off starter code that was given to us. We used POST and GET API routes, Javascript, JSON, HTML, CSS, and Node.js to build this (I am probably forgetting something).
 
+## Stack?
+Frontend:
+- HTML
+- CSS
+Backend:
+- Javascript
+- Node
+- Express to create server-side API
+
+
 ## What is the point of this app?
 This app was designed to replace a paper notebook. The user is able to click a button on the initial landing page that takes them to the notes page. Here they're are able to add notes, view previous notes and delete notes.
 
